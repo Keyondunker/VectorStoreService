@@ -16,7 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import (
+    get_details,
+    get_resources,
+    create_collection,
+    delete_collection,
+    search_vectors,
+    insert_data,
+    delete_data,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("details/", get_details, name="get_details"),
+    path("resources/", get_resources, name="get_resources"),
+    path("create-collection/", create_collection, name="create_collection"),
+    path("delete-collection/", delete_collection, name="delete_collection"),
+    path("search-vectors/", search_vectors, name="search_vectors"),
+    path("insert-data/", insert_data, name="insert_data"),
+    path("delete-data/", delete_data, name="delete_data"),
 ]
